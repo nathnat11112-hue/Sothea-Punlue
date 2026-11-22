@@ -39,7 +39,7 @@ from aiogram.enums import ParseMode
 # ====================================================================================================
 
 BOT_TOKEN = "8966231034:AAHT4wm3KWrKLR8D36pGF3CvWdanaBJhmqY"
-OWNER_ID = 8824068178
+OWNER_ID = 8371081776
 MAIN_BOT_ID = int(BOT_TOKEN.split(':')[0])
 
 # 🚀 ABA API URL (https://khmer-system.com)
@@ -2128,7 +2128,7 @@ def get_start_inline_kb(is_admin=False):
             [start_defs["contact"]],
         ]
     if is_admin:
-        rows.append([IBtn(text="ADMIN PANEL / អ្នកកាន់បត", callback_data="admin_panel", style="danger", icon_custom_emoji_id="5444869180899752137", btn_key="adminpanel")])
+        rows.append([IBtn(text="ADMIN PANEL / ", callback_data="admin_panel", style="danger", icon_custom_emoji_id="5444869180899752137", btn_key="adminpanel")])
     return InlineKeyboardMarkup(inline_keyboard=rows)
 
 def has_active_pending_qr(uid: int) -> bool:
@@ -5802,13 +5802,13 @@ async def adm_reseller(call: CallbackQuery):
     try: await call.answer()
     except Exception: pass
     kb = InlineKeyboardMarkup(inline_keyboard=[
-        [IBtn(text="Abb Reseller", callback_data="add_reseller", style="success"), IBtn(text="Del Reseller", callback_data="del_reseller", style="danger")],
+        [IBtn(text="Add Reseller", callback_data="add_reseller", style="success"), IBtn(text="Del Reseller", callback_data="del_reseller", style="danger")],
         [IBtn(text="Add Reseller VIP", callback_data="add_reseller_vip", style="success", icon_custom_emoji_id="6314076231243404806"),
          IBtn(text="Del Reseller VIP", callback_data="del_reseller_vip", style="danger", icon_custom_emoji_id="5301240299085906131")],
         [IBtn(text="តម្លៃ ទូទៅ", callback_data="adm_set_price_normal", style="primary"), IBtn(text="តម្លៃ Reseller", callback_data="adm_set_price_reseller", style="primary")],
         [IBtn(text="តម្លៃ Reseller VIP", callback_data="adm_set_price_vip", style="primary", icon_custom_emoji_id="6154233835002271015")],
         [IBtn(text="📋 បញ្ជី Reseller + VIP", callback_data="adm_list_resellers", style="primary", icon_custom_emoji_id="6154222749691679144")],
-        [IBtn(text="Abmin ID", callback_data="adm_manage_perms", style="primary")],
+        [IBtn(text="Admin ID", callback_data="adm_manage_perms", style="primary")],
         [IBtn(text="Back", callback_data="back_admin", style="danger", icon_custom_emoji_id="6035130900075777681")]
     ])
     await call.message.edit_text("👥 <b>គ្រប់គ្រង Reseller & VIP</b>", reply_markup=kb)
