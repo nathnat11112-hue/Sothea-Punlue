@@ -102,7 +102,7 @@ from aiogram.exceptions import (
 
 # 👉 ដាក់ Token ត្រង់នេះ (ឬដាក់ក្នុង Environment Variable ឈ្មោះ BOT_TOKEN / KHQR_API_KEY)
 BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip() or "9079093025:AAGJ3PRzcRsjyTU3qKOo7RYVbB4n8Tpl6Ww"
-OWNER_ID  = 8371081776
+OWNER_ID  = 8928779108
 
 KHQR_API_KEY    = os.getenv("KHQR_API_KEY", "").strip() or "sk_946fd423a9e12c7c721e22471d5178545939bb2d4c53b78f"
 KHQR_CREATE_URL = "https://khqrpay.site/api/v1/aba/create"
