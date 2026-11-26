@@ -92,7 +92,7 @@ KHQR_CREATE_URL        = "https://khqrpay.site/api/v1/aba/create"
 KHQR_BAKONG_CREATE_URL = "https://khqrpay.site/api/v1/bakong/create"
 KHQR_CHECK_URL         = "https://khqrpay.site/api/v1/payment"
 
-DB_JSON_PATH = "lang.json"
+DB_JSON_PATH = "reach.json"
 
 logging.basicConfig(
     level=logging.INFO,
@@ -981,7 +981,7 @@ async def get_real_bot_name() -> str:
         me = await bot.get_me()
         _cached_bot_names[tok] = me.first_name or me.username or get_setting('bot_name', 'REACH MOD VIP')
     except Exception:
-        _cached_bot_names[tok] = get_setting('bot_name', 'LANG MOD VIP')
+        _cached_bot_names[tok] = get_setting('bot_name', 'REACH MOD VIP')
     return _cached_bot_names[tok]
 
 
@@ -989,7 +989,7 @@ def get_main_reply_kb(uid: int) -> ReplyKeyboardMarkup:
     kb = []
     row1 = []
     if get_setting("fn_buy_now", "1") == "1":
-        row1.append(RBtn(text="BUY NOW", style="success", icon_custom_emoji_id=ICON_BUY_NOW))
+        row1.append(RBtn(text="BUY NOW", style="primary", icon_custom_emoji_id=ICON_BUY_NOW))
     if get_setting("fn_top_up", "1") == "1":
         row1.append(RBtn(text="Top Up", style="success", icon_custom_emoji_id=ICON_TOPUP_BTN))
     if row1:
@@ -1657,7 +1657,7 @@ async def send_start_message(chat_id: int, uid: int, fname: str, uname: str):
             f"<tg-emoji emoji-id='6196975549940769899'>👋</tg-emoji> <b>សួរស្ដី {fname} !</b> "
             f"<tg-emoji emoji-id='5413694143601842851'>✨</tg-emoji>\n"
             f"<tg-emoji emoji-id='5444965061749644170'>🏪</tg-emoji> ស្វារគមន៍បងមកកាន់ប្រព័ន្វ <b>{bot_name}</b> . "
-            f"លក់ MOD KEY ដោយស្វ័យប្រវត្តិ ។ សូមបងចុចបូតុង "
+            f"លក់ Mod Key ដោយស្វ័យប្រវត្តិ ។ សូមបងចុចបូតុង "
             f"<tg-emoji emoji-id='5447319442562251569'>🛒</tg-emoji> <b>BUY NOW</b> ខាងក្រោមដើម្បីទិញ \n"
             f"ឬ បងចុចបូតុង "
             f"<tg-emoji emoji-id='5447579253723918909'>💵</tg-emoji> <b>Top Up</b> ដើម្បីដាក់ប្រាក់ចូល Bot ទិញទំនិញក៏បាន៖"
@@ -1722,7 +1722,7 @@ async def send_topup_menu(event, is_edit: bool = False):
             IBtn(text="20.00", callback_data="topup_amt_20.00", style="primary", icon_custom_emoji_id=ICON_TOPUP),
         ],
         [
-            IBtn(text="កំណត់ចំនួនផ្ទាល់ខ្លួន", callback_data="topup_custom", style="success", icon_custom_emoji_id=ICON_CUSTOM_AMT),
+            IBtn(text="ចំនួនផ្ទាល់ខ្លួន", callback_data="topup_custom", style="success", icon_custom_emoji_id=ICON_CUSTOM_AMT),
         ],
         [
             IBtn(text="Main Menu", callback_data="topup_main_menu", style="danger", icon_custom_emoji_id=ICON_MAIN_MENU),
@@ -3659,7 +3659,7 @@ async def _send_order_notifications(uid, user_snapshot, item_name, total_paid, q
         )
         kb = InlineKeyboardMarkup(inline_keyboard=[[IBtn(
             text="BUY NOW", callback_data=f"sel_item_{item_id}",
-            style="success", icon_custom_emoji_id="5312361253610475399")]])
+            style="primary", icon_custom_emoji_id="5312361253610475399")]])
         await broadcast_users(alert, kb)
 
 
@@ -3895,7 +3895,7 @@ async def adm_edit_contact_admin_prompt(call: CallbackQuery, state: FSMContext):
         [IBtn(text="Back", callback_data="adm_manager_setting", style="primary",
               icon_custom_emoji_id=ICON_BACK_NEW)]
     ])
-    curr = get_setting("contact_admin", "@Kailang_Support")
+    curr = get_setting("contact_admin", "@Vbenstore")
     text = (
         f'<tg-emoji emoji-id="5258215635996908355">✏️</tg-emoji> '
         f'Please enter your new username here. You can enter it without having to provide a link. '
