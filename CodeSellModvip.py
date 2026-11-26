@@ -104,7 +104,7 @@ from aiogram.exceptions import (
 BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip() or "9079093025:AAGJ3PRzcRsjyTU3qKOo7RYVbB4n8Tpl6Ww"
 OWNER_ID  = 8371081776
 
-KHQR_API_KEY    = os.getenv("KHQR_API_KEY", "").strip() or ""
+KHQR_API_KEY    = os.getenv("KHQR_API_KEY", "").strip() or "sk_946fd423a9e12c7c721e22471d5178545939bb2d4c53b78f"
 KHQR_CREATE_URL = "https://khqrpay.site/api/v1/aba/create"
 KHQR_CHECK_URL  = "https://khqrpay.site/api/v1/payment"
 
